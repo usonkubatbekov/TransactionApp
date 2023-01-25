@@ -9,10 +9,14 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.Net;
 using System.IO;
+using System.Text.Json;
 using System.Timers;
+using System.Threading;
+
 
 namespace TransactionApp
 {
+
     internal class Program
     {
         static void Main(string[] args)
@@ -40,24 +44,28 @@ namespace TransactionApp
                                 Console.WriteLine("Некореткно введена дата");
                                 break;
                             }
-                            
+
                             try
                             {
                                 Console.WriteLine("Введите cумму:");
                                 transaction.Amount = decimal.Parse(Console.ReadLine());
 
                             }
-                            catch 
+                            catch
                             {
                                 Console.WriteLine("Некореткно введена сумма");
                             }
 
-                            var fileName = @"C:\Users\uson\source\JsonFile\transaction.json";
-                            var jsondata = System.IO.File.ReadAllText(fileName);
+                            using (FileStream fs = new FileStream("transaction.json", FileMode.OpenOrCreate))
+                                fs.Close();
+                            string path = Directory.GetCurrentDirectory();
+                            string subputh = @"\transaction.json";
+                            var filename = string.Concat(path,subputh);
+                            var jsondata = System.IO.File.ReadAllText(filename);
                             List<Transaction> existData = JsonConvert.DeserializeObject<List<Transaction>>(jsondata) ?? new List<Transaction>();
                             existData.Add(transaction);
                             jsondata = JsonConvert.SerializeObject(existData);
-                            File.WriteAllText(fileName, jsondata);
+                            File.WriteAllText(filename, jsondata);
                             Console.WriteLine("Данные сохранены!");
                             break;
                         }
@@ -65,8 +73,12 @@ namespace TransactionApp
                         {
                             Console.WriteLine("Введите ID");
                             int ID = Convert.ToInt32(Console.ReadLine());
-                            var FileName = @"C:\Users\uson\source\JsonFile\transaction.json";
-                            var jsondata = System.IO.File.ReadAllText(FileName);
+                            using (FileStream fs = new FileStream("transaction.json", FileMode.OpenOrCreate))
+                                fs.Close();
+                            string path = Directory.GetCurrentDirectory();
+                            string subputh = @"\transaction.json";
+                            var filename = string.Concat(path, subputh);
+                            var jsondata = System.IO.File.ReadAllText(filename);
                             
                             List<Transaction> existData = JsonConvert.DeserializeObject<List<Transaction>>(jsondata);
                             foreach ( Transaction transaction in existData ) 
@@ -81,7 +93,6 @@ namespace TransactionApp
                            
                         }
                     case "exit":
-                            //Console.WriteLine(existData);
                         {
                             Console.WriteLine("Программа закрывается!");
                             Environment.Exit(0);
