@@ -66,3 +66,13 @@ C:\Users\uson\source\repos\TransactionApp\TransactionApp\bin\Debug\Grpc.Core.pdb
 C:\Users\uson\source\repos\TransactionApp\TransactionApp\bin\Debug\Grpc.Core.xml
 C:\Users\uson\source\repos\TransactionApp\TransactionApp\bin\Debug\Grpc.Core.Api.pdb
 C:\Users\uson\source\repos\TransactionApp\TransactionApp\bin\Debug\Grpc.Core.Api.xml
+C:\Users\uson\Documents\GitHub\TransactionApp\TransactionApp\bin\Debug\grpc_csharp_ext.x86.dll
+C:\Users\uson\Documents\GitHub\TransactionApp\TransactionApp\bin\Debug\grpc_csharp_ext.x64.dll
+C:\Users\uson\Documents\GitHub\TransactionApp\TransactionApp\bin\Debug\libgrpc_csharp_ext.x64.so
+C:\Users\uson\Documents\GitHub\TransactionApp\TransactionApp\bin\Debug\libgrpc_csharp_ext.x64.dylib
+C:\Users\uson\Documents\GitHub\TransactionApp\TransactionApp\bin\Debug\Grpc.Core.Api.dll
+C:\Users\uson\Documents\GitHub\TransactionApp\TransactionApp\bin\Debug\Grpc.Core.dll
+C:\Users\uson\Documents\GitHub\TransactionApp\TransactionApp\bin\Debug\Grpc.Core.pdb
+C:\Users\uson\Documents\GitHub\TransactionApp\TransactionApp\bin\Debug\Grpc.Core.xml
+C:\Users\uson\Documents\GitHub\TransactionApp\TransactionApp\bin\Debug\Grpc.Core.Api.pdb
+C:\Users\uson\Documents\GitHub\TransactionApp\TransactionApp\bin\Debug\Grpc.Core.Api.xml
