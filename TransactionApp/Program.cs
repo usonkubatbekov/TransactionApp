@@ -29,7 +29,7 @@ namespace TransactionApp
             {
                 Console.Clear();
                 Console.OutputEncoding = Encoding.UTF8;
-                Console.WriteLine("Выберите и введите одну из команд:add, get, exit");
+                Console.WriteLine("Выберите и введите одну из команд: add, get, exit");
                 string Comand = Console.ReadLine();
                 switch (Comand)
                 {

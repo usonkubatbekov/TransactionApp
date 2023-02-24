@@ -16,10 +16,10 @@ namespace TransactionApp.Service
          public void AddTransaction()
         {
             Transaction transaction = new Transaction();
-            Console.WriteLine("Введите ID:");
-            transaction.Id = int.Parse(Console.ReadLine());
             try
             {
+                Console.WriteLine("Введите ID:");
+                transaction.Id = int.Parse(Console.ReadLine());
                 NumberFormatInfo number = new NumberFormatInfo()
                 {
                     NumberDecimalSeparator = ".",
@@ -34,10 +34,7 @@ namespace TransactionApp.Service
                 Console.WriteLine("Некореткно введены данные");
             }
 
-            var transaction1 = transaction;
-
-            WorkWithJsonFile(true,0,transaction1);
-
+            WorkWithJsonFile(true,0,transaction);
         }
 
         public void GetTransaction()
