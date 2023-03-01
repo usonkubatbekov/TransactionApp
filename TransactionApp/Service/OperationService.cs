@@ -47,7 +47,7 @@ namespace TransactionApp.Service
 
         }
 
-        private void ReadandWriteToJsonFile(bool AddOrGet, int ID, Transaction transaction)
+        private void ReadandWriteToJsonFile(bool IsAddOrGet, int ID, Transaction transaction)
         {
             using (FileStream fs = new FileStream("transaction.json", FileMode.OpenOrCreate))
                 fs.Close();
@@ -55,7 +55,7 @@ namespace TransactionApp.Service
             var jsondata = System.IO.File.ReadAllText(path);
             List<Transaction> transactionList = JsonConvert.DeserializeObject<List<Transaction>>(jsondata);
 
-            if (AddOrGet == true)
+            if (IsAddOrGet == true)
             {
                 transactionList.Add(transaction);
                 jsondata = JsonConvert.SerializeObject(transactionList);
