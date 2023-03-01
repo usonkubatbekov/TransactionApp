@@ -23,7 +23,7 @@ namespace TransactionApp
                 })
                 .Build();
 
-            IOperationService svc = ActivatorUtilities.CreateInstance<OperationService>(host.Services);
+            IOperationService operationService = ActivatorUtilities.CreateInstance<OperationService>(host.Services);
 
             while (true)
             {
@@ -35,12 +35,12 @@ namespace TransactionApp
                 {
                     case "add":
                         {
-                            svc.AddTransaction();
+                            operationService.AddTransaction();
                             break;
                         }
                     case "get":
                         {
-                            svc.GetTransaction();
+                            operationService.GetTransaction();
                             break;
                            
                         }
